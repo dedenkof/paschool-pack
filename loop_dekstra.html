@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>конструкция for (Цыкл Дейкстра)</title>
+
+    <script>
+        var a;
+        for (; ;){
+            a = prompt ('Введите направление l / r / t / s');
+            switch (a) {
+                case 'l':{
+                    document.write('Пойти налево' + '<br />');
+                    continue;
+                }
+                case 'r':{
+                    document.write('Пойти направо' + '<br />');
+                    continue;
+                }
+                case 't':{
+                    document.write('Пойти прямо' + '<br />');
+                    continue;
+                }
+                case 's':{
+                    document.write('Пойти вниз' + '<br />');
+                    continue;
+                }
+                default:{
+                    exit = confirm('Выйти?');
+                    if(exit){
+                        document.write('Вы завершили выролнение');
+                        break;
+                    }
+
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
