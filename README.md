@@ -1,2 +1,2 @@
 # paschool-pack
-php academy
+theory JS
