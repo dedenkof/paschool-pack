@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Condition while example</title>
+    <script>
+        var str = "Угадайте задуманное число от 1 до 10 с 5 попыток";
+        var maxAttempt = 5;
+        var attempt =0;
+        var num = 3;
+
+        while(attempt < maxAttempt){
+            attempt++;
+            result = prompt(str + " Попытка " + attempt + " ");
+
+            if (!isNaN(+result)){
+                break;
+            }
+
+            if (result == '' || result == null){
+                break;
+            }
+
+            if (result != num){
+                str = "Вы не угадали!";
+                continue;
+            }
+
+            document.write("Поздравляем, вы угадали с " + attempt + " попытки!");
+            break;
+        }
+
+        document.write(" Конец игры!");
+    </script>
+</head>
+<body>
+
+</body>
+</html>
