@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ternar statement example</title>
+    <script>
+        /*
+        * Сокращенная форма конструкции if-else
+        * Включает в себя три опенранда
+        * условие ? если условие истинно (выражение 1) : если условие ложно (выражение 2)
+        * Алгоритм работы
+        * 1) Вычисляется логическое выражение (условие)
+        * 2) Если логическое выражение истинно, то вычисляется значение выражения выражение 1,
+        * иначе  - значение выражения - выражение 2
+        * 3) Вычисленное значение возвращается*/
+
+        var quantity = 10; // количество
+        var price = 100; // цена товара за 1 шт.
+        var discount  = 0.5 // скидка на общую стоимость 50%
+        var total; // общая стоимость
+
+        /*
+        * При покупке 10 единиц и больше скидка в 50%*/
+
+        total = quantity >=10 ?
+            quantity * price * discount :
+            quantity * price;
+
+        document.write("Общая стоимость составляет: " + total + " грн.");
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
