@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var sizeGlass = prompt ("Выберите размер стакана: 1 = маленький 2 = средний 3 = большой. Сделайте ваш выбор!");
+        // Инициализация стоимости
+        var cost =0;
+        // Принимаем размер стакана
+        switch(sizeGlass){
+            case "1":{
+                // Увеличиваем цену на 25
+                cost +=25;
+                document.write("Вы выбрали маленький стакан!");
+            }
+            break;
+
+            case "2":{
+                // Увеличиваем цену на 35
+                cost +=35;
+                document.write("Вы выбрали средний стакан!");
+            }
+            break;
+
+            case "3":{
+                // Увеличиваем цену на 50
+                cost +=50;
+                document.write("Вы выбрали большой стакан!");
+            }
+            break;
+
+            default:{
+                document.write("Неверный выбор!");
+            }
+            break;
+        }
+
+        if(cost != 0) {
+            // Если после выбора переменная сost не равняется нулю
+            document.write(" Внесите " + cost + " гривен. Спасибо!");
+        }else{
+            sizeGlass = prompt ("Выберите размер стакана: 1 = маленький 2 = средний 3 = большой. Сделайте ваш выбор!");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
