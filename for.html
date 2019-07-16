@@ -117,7 +117,6 @@
                         let mainBlock = document.querySelector('.main-block');
                         let row;
                         let col;
-                        let total;
 
                         // Выводим строки
                         for (let i = 1; i <= 8; i++){
@@ -133,9 +132,7 @@
 
                                 mainBlock.appendChild(col);
 
-                                total = i + j;
-
-                                if(total % 2 == 0){
+                                if((i + j) % 2 == 0){
 
                                     col.className = 'square white';
 
