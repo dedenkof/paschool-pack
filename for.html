@@ -70,18 +70,26 @@
             list-style-type: none;
         }
 
+
+        .main-block{
+            margin: 30px auto;
+            border: 1px solid black;
+        }
+
+        .square{
+            width: 70px;
+            height: 70px;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+        }
+
         .black{
-            width: 40px;
-            height: 40px;
-            background: #000000;
-            border: 1px solid #fff;
+            background: #000;
         }
 
         .white{
-            width: 40px;
-            height: 40px;
             background: #fff;
-            border: 1px solid #000;
         }
     </style>
 
@@ -101,30 +109,50 @@
             <input type="radio" name="tabs" id="tab-1" checked>
             <label for="tab-1">Variant 1</label>
             <div class="tab-content">
+
+                <div class="main-block"></div>
 <!--                <pre id="demo1">-->
                 <ul>
                     <script>
+                        let mainBlock = document.querySelector('.main-block');
+                        let row;
+                        let col;
+                        let total;
 
-                        for (var i = 0; i < 10; i++){
-                            // Выводим 1 строку из 10 квадратов
+                        // Выводим строки
+                        for (let i = 1; i <= 8; i++){
 
-                            for (var j = 0; j < 10; j++){
+                            row = document.createElement('div');
 
-                                if(j % 2 == 0 ){
-                                    document.write("<li class='white'></li>");
+                            mainBlock.appendChild(row);
+
+                            // Выводим колонки в строке
+                            for (let j = 1; j <= 8; j++){
+
+                                col = document.createElement('div');
+
+                                mainBlock.appendChild(col);
+
+                                total = i + j;
+
+                                if(total % 2 == 0){
+
+                                    col.className = 'square white';
+
                                 }else{
-                                    document.write("<li class='black'></li>");
+
+                                    col.className = 'square black';
+
                                 }
+
                             }
-
-
-                            // Переход на новую строку
-                            document.write("<br/>");
                         }
                 </script>
                     </ul>
 <!--            </pre>-->
 <!--                <button type="button" value="Первая кнопка" onClick="Demo1()">Запустить Demo</button>-->
+
+
             </div>
         </li>
 
