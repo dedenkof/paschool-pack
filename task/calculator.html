@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ChessBoard</title>
+    <style>
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        main{
+            margin-top: 40px;
+        }
+
+        .main-block {
+            width: 560px;
+            height: 560px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+
+        .square {
+            width: 70px;
+            height: 70px;
+            padding: 0;
+            margin: 0;
+            float: left;
+        }
+
+        .black {
+            background: #000;
+        }
+
+        .white {
+            background: #fff;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Calculator*</h1>
+        <p>*Для ознакомительных целей!!!</p>
+    </header>
+    <main>
+        <div class="main-block"></div>
+    </main>
+</div>
+
+<script>
+    var mainBlock = document.querySelector('.main-block');
+    var operandL = prompt('Введите первое число');
+    var operandR = prompt('Введите второе число');
+    var operator = prompt('Введите оператор: сложение +, умножение *, вычитание-, деление /');
+    var res;
+    var div = document.createElement('div');
+
+    function addition (a, b) {
+            return a + b;
+    }
+
+    function subtraction (a, b) {
+        return a - b;
+    }
+
+    function multiplication (a, b) {
+        return a * b;
+    }
+
+    function division (a, b) {
+        return a / b;
+    }
+
+    operandL = parseInt(operandL);
+    operandR = parseInt(operandR);
+
+
+    switch(operator){
+        case '+':
+            res = addition(operandL, operandR);
+            break;
+
+        case '-':
+            res = subtraction(operandL, operandR);
+            break;
+
+        case '*':
+            res = multiplication(operandL, operandR);
+            break;
+
+        case '/':
+            res = division(operandL, operandR);
+            break;
+
+        default: div.innerHTML = '<p>' + operator + ' - не является знаком арифметической операции! <br>' +
+            'Введите оператор: сложение +, умножение *, вычитание-, деление /</p>';
+
+    }
+
+    /*if(res != undefined) {
+        div.innerHTML = '<p>' + operandR + ' ' + operator + ' ' + operandR + ' = ' + res + '</p>';
+        mainBlock.appendChild(div);
+    }*/
+
+    console.log(res);
+
+</script>
+</body>
+</html>
