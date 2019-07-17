@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ChessBoard</title>
+    <style>
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        main{
+            margin-top: 40px;
+        }
+
+        .main-block {
+            width: 560px;
+            height: 560px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+
+        .square {
+            width: 70px;
+            height: 70px;
+            padding: 0;
+            margin: 0;
+            float: left;
+        }
+
+        .black {
+            background: #000;
+        }
+
+        .white {
+            background: #fff;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>ChessBoard*</h1>
+        <p>*В ознакомительных целях с присутствием говнокода!!!</p>
+    </header>
+    <main>
+        <div class="main-block"></div>
+    </main>
+</div>
+
+<script>
+    let mainBlock = document.querySelector('.main-block');
+    let row;
+    let col;
+
+    // Выводим строки
+    for (let i = 0; i < 8; i++){
+
+        mainBlock.appendChild(row = document.createElement('div'));
+
+        // Выводим колонки в строке
+        for (let j = 0; j < 8; j++){
+
+            mainBlock.appendChild(col = document.createElement('div'));
+
+            if((i + j) % 2 == 0){
+
+                col.className = 'square white';
+
+            }else{
+
+                col.className = 'square black';
+
+            }
+
+        }
+    }
+</script>
+</body>
+</html>
