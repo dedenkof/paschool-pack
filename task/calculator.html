@@ -81,7 +81,8 @@
             var operandR = parseInt(document.getElementById('operand-right').value);
             var result;
 
-
+            if(operator){
+                console.log(operator);
 
                 switch(operator){
                     case '+':{
@@ -110,23 +111,12 @@
                 }
 
 
+            //document.getElementById('result-output').value = result;
 
 
 
+            }
 
-
-
-
-
-
-
-
-
-
-            /*if(operandL && operator && operandR){
-                document.getElementById('result-output').value = result;
-            }*/
-            document.getElementById('result-output').value = result;
         }
 
     </script>
@@ -160,7 +150,7 @@
                         <button onclick="calcShow('%')">%</button>
                     </div>
                     <p><input type="tel" size=10 id="operand-right"/></p>
-<!--                    <button onclick="calcShow()">=</button>-->
+                        <button onclick="calcShow('=')">=</button>
                     <input type="tel" id="result-output">
                 </div>
 
