@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Function literals</title>
+    <style>
+        .tabs {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+        .tabs:after {
+            content: "";
+            clear: both;
+            display: block;
+            height: 240px;
+        }
+        .tabs li {
+            float: left;
+        }
+        .tabs li > input {
+            display: none;
+        }
+        .tabs li > label {
+            display: inline-block;
+            border: 1px solid #999;
+            border-right-width: 0;
+            border-bottom-width: 0;
+            height: 30px;
+            line-height: 30px;
+            padding: 5px 20px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .tabs li:last-child > label {
+            border-right-width: 1px;
+        }
+        .tabs .tab-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            padding: 20px;
+            border: 1px solid #999;
+            min-height: 200px;
+            overflow-y: auto;
+        }
+
+        /* Функциональность: */
+
+        .tabs li > input:checked + label {
+            background-color: #999;
+        }
+        .tabs li > input:checked ~ .tab-content {
+            display: block;
+        }
+
+        .container{
+            width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+<script>
+    //TODO
+    // Написать функционал отображения демонтента
+    /*function showDemo(demo){
+    }*/
+</script>
+<div class="container">
+    <h1>Function literals</h1>
+
+<ul class="tabs">
+    <li>
+        <input type="radio" name="tabs" id="tab-1">
+        <label for="tab-1">Function literals</label>
+        <div class="tab-content">
+
+            <pre id="demo1">
+
+                var f = function() {
+                    document.write('<p>Hello!</p>');
+                };
+
+                f();
+
+                f= function () {
+                    document.write('<p>Bye!</p>');
+                }
+
+                f();
+
+            </pre>
+
+            <button type="button" value="Первая кнопка" onClick="Demo2()">Запустить Demo2</button>
+
+        </div>
+    </li>
+</ul>
+</div>
+</body>
+</html>

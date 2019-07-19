@@ -25,31 +25,43 @@
             margin-top: 40px;
         }
 
+        #screen-show{
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.77);
+        }
+
+        #screen{
+            background: #0affa6;
+            border: 2px solid rgba(19, 103, 204, 0.25);
+            min-height: 40px;
+            display: block;
+            width: 90%;
+            padding: 10px 5%;
+            font-size: 30px;
+        }
+
         .main-block {
             padding: 0;
             max-width: 800px;
             min-height: 560px;
             margin: 0 auto;
-            border: 2px solid #00b4cc;
+            border: 2px solid #dee5e6;
         }
 
-        .operator-title{
-            background: #00b4cc;
-            color: #ffffff;
-        }
-
-        .operator-title,
         .operator-action
         {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            padding: 20px 0;
-            border-bottom: 2px solid #00b4cc;
+            padding: 10px 0;
+            border-bottom: 2px solid #dee5e6;
         }
 
         .operator-action{
-            padding: 40px 0;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
         }
 
         input[type=tel]{
@@ -62,46 +74,65 @@
         }
 
         button{
-            border: 2px solid #49c8cc;
-            padding: 10px;
-            background: #00b4cc;
-            color: #ffffff;
-            text-align: center;
-            font-size: 19px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            background: #fff;
+            border-radius: 3px;
+            border: 1px solid #c4c4c4;
+            font-size: 2rem;
+            color: #333;
+            background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+            text-shadow: 0 1px rgba(255,255,255,.4);
+        }
+
+        button:hover {
+            background-color: #eaeaea;
         }
 
     </style>
 
     <script>
 
+        function calcClear(){
 
+        }
+
+        function calcUpdate(){
+
+        }
+
+        function inputOperator(){
+
+        }
 
         function calcShow(operator){
-            var operandL = parseInt(document.getElementById('operand-left').value);
-            var operandR = parseInt(document.getElementById('operand-right').value);
+            var operandL = document.getElementById('operand-left').value ? parseInt(document.getElementById('operand-left').value) : '';
+            var operandR = document.getElementById('operand-right').value ? parseInt(document.getElementById('operand-right').value) : '';
             var result;
 
-            if(operator){
-                console.log(operator);
+            if(operator == "=") {
 
-                switch(operator){
-                    case '+':{
-                        result =  operandL + operandR;
+                switch (operator) {
+                    case '+': {
+                        result = operandL + operandR;
                         break;
                     }
-                    case '-':{
+                    case '-': {
                         result = operandL - operandR;
                         break;
                     }
-                    case '*':{
+                    case '*': {
                         result = operandL * operandR;
                         break;
                     }
-                    case '/':{
+                    case '/': {
                         result = operandL / operandR;
                         break;
                     }
-                    case '%':{
+                    case '%': {
                         result = operandR * 100 / operandL;
                         break;
                     }
@@ -109,13 +140,12 @@
                         break;
                     }
                 }
-
-
-            //document.getElementById('result-output').value = result;
-
-
-
             }
+
+            document.getElementById('result-output').value = result;
+
+
+
 
         }
 
@@ -133,25 +163,23 @@
     <main>
 
         <div class="main-block">
-
-                <div class="operator-title">
-                    <div>Ввод первого числа</div>
-                    <div>Ввод второго числа</div>
-                    <div>Результат</div>
-                </div>
+        <div id ="screen-show">
+            <input type="text" name="screen" value="0"  id="screen" placeholder="0" disabled="true">
+        </div>
 
                 <div class="operator-action">
-                    <p><input type="tel" size=10 id="operand-left" /></p>
-                    <div>
-                        <button onclick="calcShow('+')">+</button>
-                        <button onclick="calcShow('-')">-</button>
-                        <button onclick="calcShow('*')">*</button>
-                        <button onclick="calcShow('/')">/</button>
-                        <button onclick="calcShow('%')">%</button>
-                    </div>
-                    <p><input type="tel" size=10 id="operand-right"/></p>
-                        <button onclick="calcShow('=')">=</button>
-                    <input type="tel" id="result-output">
+                        <button value="+" onclick="inputOperator('+')">+</button>
+                        <button value="-" onclick="inputOperator('-')">-</button>
+                        <button value="*" onclick="inputOperator('*')">*</button>
+                        <button value="/" onclick="inputOperator('/')">/</button>
+                        <button value="%" onclick="inputOperator('%')">%</button>
+                        <button value="=" onclick="inputOperator('=')">=</button>
+                        <button value="1" onclick="inputNumber('1')">1</button>
+                        <button value="." onclick="dot('.')">.</button>
+                        <button value="x" onclick="calcclear('d')">x</button>
+                        <button value="c" onclick="calcclear('c')">C</button>
+
+
                 </div>
 
         </div>
